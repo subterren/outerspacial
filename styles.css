@@ -5,6 +5,9 @@ body {
     padding: 0;
     background-color: #f0f0f0;
     color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header Styles */
@@ -21,24 +24,28 @@ header {
 }
 
 /* Main Content Styles */
-.hero, .features, .about {
-    padding: 40px;
-    text-align: center;
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero {
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 80%;
+    height: 80%;
+}
+
+.grid-item {
     background-color: #555;
     color: #fff;
-}
-
-.features {
-    background-color: #777;
-    color: #fff;
-}
-
-.about {
-    background-color: #999;
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Footer Styles */
@@ -47,4 +54,5 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+    margin-top: auto;
 }
