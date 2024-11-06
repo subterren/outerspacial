@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>information</title>
+    <title>Grayscale Website</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <img src="your-splash-image.png" alt="Welcome">
+            <p>Click anywhere to continue</p>
         </div>
-    </header>
+    </div>
 
-    <main>
-        <div class="grid-container">
-            <div class="grid-item">
-                <!-- Content for grid item 1 -->
+    <!-- Main Content (will be hidden initially) -->
+    <div id="main-content" class="hidden">
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
             </div>
-            <div class="grid-item">
-                <!-- Content for grid item 2 -->
-            </div>
-            <div class="grid-item">
-                <!-- Content for grid item 3 -->
-            </div>
-            <div class="grid-item">
-                <!-- Content for grid item 4 -->
-            </div>
-        </div>
-    </main>
+        </header>
 
-    <footer>
-        <p>&copy; SUBTERREN, all rights reserved.</p>
-    </footer>
-</body>
+        <main>
+            <div class="grid-container">
+                <div class="grid-item"><!-- Content 1 --></div>
+                <div class="grid-item"><!-- Content 2 --></div>
+                <div class="grid-item"><!-- Content 3 --></div>
+                <div class="grid-item"><!-- Content 4 --></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Grayscale Website. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const mainContent = document.getElementById('main-content');
+
+            splashScreen.addEventListener('click', function() {
+                splashScreen.style.opacity = '0';
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    mainContent.classList.remove('hidden');
+                }, 500); // Match this with CSS transition time
+            });
+        });
+    </script>
+</head>
 </html>
